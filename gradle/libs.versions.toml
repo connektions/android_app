@@ -1,0 +1,72 @@
+[versions]
+#default settings region
+versionCode = "1"
+versionName = "1.0"
+compileSdk = "33"
+minSdk = "24"
+targetSdk = "33"
+
+#androix deps region
+coreKtx = "1.7.0"
+appcompat = "1.4.0"
+material = "1.4.0"
+compose = "1.2.0"
+lifecycleRuntimeKtx = "2.4.0"
+activityCompose = "1.4.0"
+lifecycleViewmodelKtx = "2.4.0"
+junit = "4.13.2"
+junitExt = "1.1.4"
+espressoCore = "3.5.0"
+lifecycleViewmodelCompose = "2.4.0"
+navigationCompose = "2.4.0-rc01"
+androidApp = "7.4.0"
+androidLib = "7.4.0"
+kotlinAndroid = "1.7.0"
+kotlinCoroutines = "1.6.4"
+# UI
+
+#Network
+
+# Coroutines
+
+# DI
+
+#Utils
+detekt = "1.17.0"
+
+[libraries]
+# AndroidX
+androidx-core = { module = "androidx.core:core", version.ref = "coreKtx" }
+androidx-coreKtx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-appCompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-material = { module = "com.google.android.material:material", version.ref = "material" }
+
+# AndroidX Lifecycle
+androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+lifecycle-viewmodel-compose-lib = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
+
+# Compose
+androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+androidx-compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+androidx-compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
+navigation-compose-lib = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+
+# Coroutines
+kotlin-coroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinCoroutines" }
+kotlin-coroutinesAndroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
+kotlin-coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinCoroutines" }
+
+[plugins]
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+
+[bundles]
+androidx = ["androidx-core", "androidx-coreKtx", "androidx-appCompat", "androidx-material"]
+
+lifecycle = ["androidx-lifecycle", "androidx-lifecycle-viewmodel", "lifecycle-viewmodel-compose-lib"]
+
+coroutines = ["kotlin-coroutinesAndroid", "kotlin-coroutinesCore", "kotlin-coroutinesTest"]
+
+compose = ["androidx-compose-ui", "androidx-compose-material", "androidx-compose-tooling-preview",
+    "androidx-activity-compose", "navigation-compose-lib"]
