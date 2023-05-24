@@ -1,3 +1,6 @@
+@file:Suppress( "NewLineAtEndOfFile")
+
+
 package com.example.connektions
 
 import org.junit.Test

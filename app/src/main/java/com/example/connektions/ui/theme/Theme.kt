@@ -1,3 +1,5 @@
+@file:Suppress( "NewLineAtEndOfFile")
+
 package com.example.connektions.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
