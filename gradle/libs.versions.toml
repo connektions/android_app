@@ -23,9 +23,12 @@ androidApp = "7.4.0"
 androidLib = "7.4.0"
 kotlinAndroid = "1.7.0"
 kotlinCoroutines = "1.6.4"
+androidxTestJunit = "1.1.4"
+androidxTestEspressoCore = "3.5.0"
+
 # UI
 
-#Network
+# Network
 
 # Coroutines
 
@@ -58,6 +61,19 @@ kotlin-coroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-cor
 kotlin-coroutinesAndroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
 kotlin-coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinCoroutines" }
 
+# Tests
+junit-ext = { module = "junit:junit", version.ref = "junit" }
+
+# Android Tests
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junit" }
+androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidxTestEspressoCore" }
+androidx-compose-junit = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
+
+# Debug
+androidx-compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+androidx-compose-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
+
+
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 
@@ -70,3 +86,10 @@ coroutines = ["kotlin-coroutinesAndroid", "kotlin-coroutinesCore", "kotlin-corou
 
 compose = ["androidx-compose-ui", "androidx-compose-material", "androidx-compose-tooling-preview",
     "androidx-activity-compose", "navigation-compose-lib"]
+
+tests = ["junit-ext"]
+
+androidTests = ["androidx-junit", "androidx-test-espresso-core", "androidx-compose-junit"]
+
+debug = ["androidx-compose-tooling", "androidx-compose-test-manifest"]
+

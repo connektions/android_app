@@ -1,5 +1,3 @@
-@file:Suppress("MagicNumber", "NewLineAtEndOfFile")
-
 package com.example.connektions.ui.theme
 
 import androidx.compose.ui.graphics.Color
