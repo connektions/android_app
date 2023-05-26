@@ -35,7 +35,7 @@ androidxTestEspressoCore = "3.5.0"
 # DI
 
 #Utils
-detekt = "1.17.0"
+detekt = "1.21.0"
 
 [libraries]
 # AndroidX
@@ -73,6 +73,9 @@ androidx-compose-junit = { module = "androidx.compose.ui:ui-test-junit4", versio
 androidx-compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 androidx-compose-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 
+# Detekt
+util-detektFormatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+util-detektPlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
