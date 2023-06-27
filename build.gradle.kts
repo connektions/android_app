@@ -12,7 +12,7 @@ buildscript {
 plugins {
     id("com.android.application") version "7.4.0" apply false
     id("com.android.library") version "7.4.0" apply false
-    id("org.jetbrains.kotlin.android") version "1.7.0" apply false
+    id("org.jetbrains.kotlin.android") version "1.8.10" apply false
     alias(libs.plugins.detekt)
 }
 
@@ -30,7 +30,7 @@ allprojects {
     }
     tasks.withType<Detekt>().configureEach {
 
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = JavaVersion.VERSION_18.toString()
         setSource(files("src"))
         exclude("**/androidTest/**")
         exclude("**/assets/**")
@@ -42,7 +42,7 @@ allprojects {
         }
     }
     tasks.withType<DetektCreateBaselineTask>().configureEach {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = JavaVersion.VERSION_18.toString()
     }
 
     configure<DetektExtension> {
@@ -50,7 +50,10 @@ allprojects {
         buildUponDefaultConfig = true
         autoCorrect = true
     }
+
+
 }
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
+
