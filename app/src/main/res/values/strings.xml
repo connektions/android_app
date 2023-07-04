@@ -9,4 +9,6 @@
     <string name="teams">Команда</string>
     <string name="contacts">Контакты</string>
     <string name="add_section">Добавить секцию</string>
+
+    <string name="user_city_name">г. %1$s</string>
 </resources>

@@ -9,6 +9,4 @@ detekt {
         xml.enabled = true
         txt.enabled = true
     }
-
-
 }

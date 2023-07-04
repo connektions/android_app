@@ -25,7 +25,8 @@ androidLib = "7.4.0"
 kotlinAndroid = "1.7.0"
 kotlinCoroutines = "1.6.4"
 androidxTestJunit = "1.1.4"
-androidxTestEspressoCore = "3.5.0"
+androidxTestEspressoCore = "3.5.1"
+constraintlayoutCompose = "1.0.1"
 
 # UI
 
@@ -34,12 +35,16 @@ androidxTestEspressoCore = "3.5.0"
 # Coroutines
 
 # DI
+hiltAndroid = "2.46.1"
+hiltNavigationCompose = "1.1.0-alpha01"
+hiltCompiler = "1.0.0"
 
 #Utils
 detekt = "1.21.0"
 
 [libraries]
 # AndroidX
+androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 androidx-core = { module = "androidx.core:core", version.ref = "coreKtx" }
 androidx-coreKtx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
 androidx-appCompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
@@ -66,7 +71,7 @@ kotlin-coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-tes
 junit-ext = { module = "junit:junit", version.ref = "junit" }
 
 # Android Tests
-androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junit" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junitExt" }
 androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidxTestEspressoCore" }
 androidx-compose-junit = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
 
@@ -78,11 +83,21 @@ androidx-compose-test-manifest = { module = "androidx.compose.ui:ui-test-manifes
 util-detektFormatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 util-detektPlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 
+# DI
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
+#androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
+#androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
 
 [bundles]
-androidx = ["androidx-core", "androidx-coreKtx", "androidx-appCompat", "androidx-material"]
+androidx = ["androidx-core", "androidx-coreKtx", "androidx-appCompat", "androidx-material",
+    "androidx-constraintlayout-compose", "hilt-android",]
+
+kaptHilt = ["hilt-compiler"]
 
 lifecycle = ["androidx-lifecycle", "androidx-lifecycle-viewmodel", "lifecycle-viewmodel-compose-lib"]
 
