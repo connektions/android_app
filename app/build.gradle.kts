@@ -1,7 +1,8 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    id("kotlin-kapt")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -30,18 +31,19 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_18
+        targetCompatibility = JavaVersion.VERSION_18
     }
-    kotlinOptions {
-        jvmTarget = "17"
+    kotlin {
+        jvmToolchain(18)
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.2.0"
+        kotlinCompilerExtensionVersion = "1.4.2"
     }
     packagingOptions {
         resources {
@@ -56,8 +58,13 @@ dependencies {
     implementation(libs.bundles.lifecycle)
     implementation(libs.bundles.coroutines)
     implementation(libs.bundles.compose)
+    kapt(libs.bundles.kaptHilt)
     testImplementation(libs.bundles.tests)
     androidTestImplementation(libs.bundles.androidTests)
     debugImplementation(libs.bundles.debug)
 
+}
+
+kapt {
+    correctErrorTypes = true
 }
