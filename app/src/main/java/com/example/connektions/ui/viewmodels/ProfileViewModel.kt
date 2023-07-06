@@ -9,10 +9,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @HiltViewModel
-class ProfileViewModel @Inject constructor(
+class ProfileViewModel(
     private val _profileRepository: ProfileRepository
 ) : ViewModel() {
     private val _userProfile = MutableStateFlow<Result<User>>(Result.Loading)

@@ -8,9 +8,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.connektions.navigation.AppNavigationGraph
 import com.example.connektions.ui.theme.AppTheme
 import com.example.connektions.ui.viewmodels.ProfileViewModel
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
